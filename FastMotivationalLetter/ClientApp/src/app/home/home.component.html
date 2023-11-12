@@ -1,0 +1,91 @@
+<h1 class="motivationalLetter">Motivational letter</h1>
+<div class="container">
+    <div class="a4-page">
+      <div>
+        <form #validForm="ngForm">
+        <div>
+          <p class="personInfo">Your Name:
+            <input type="text" id="name" name="name" [(ngModel)]="formData.name" #name="ngModel" required #nameInput>
+            <span *ngIf="!formData.name" style="font-size: 10px; color: red;"> Please enter a your name!</span>
+          </p>
+          <p class="personInfo">Your Address:
+            <input type="text" id="address" name="address" [(ngModel)]="formData.address" #address="ngModel" required #addressInput>
+            <span *ngIf="!formData.address" style="font-size: 10px; color: red;"> Please enter your Address!</span>
+          </p>
+          <p class="personInfo">Your Email Address:
+            <input type="text" id="email" name="email" [(ngModel)]="formData.email" #email="ngModel" required #emailInput>
+            <span *ngIf="!formData.email" style="font-size: 10px; color: red;"> Please enter your Email Address!</span>
+          </p>
+          <p class="personInfo">Your Phone Number:
+            <input type="text" id="phone" name="phone" [(ngModel)]="formData.phone" #email="ngModel" required #phoneInput>
+            <span *ngIf="!formData.phone" style="font-size: 10px; color: red;"> Please enter your Phone Number!</span>
+          </p>
+        </div>
+      <br>
+        <div>
+          <p class="personInfo">Employer's Name:
+            <input type="text" id="employerName" name="employerName" [(ngModel)]="formData.employerName" #employerName="ngModel" required #employerInput>
+            <span *ngIf="!formData.employerName" style="font-size: 10px; color: red;"> Please enter a Employer's Name!</span>
+          </p>
+          <p class="personInfo">Company Name:
+            <input type="text" id="companyName" name="companyName" [(ngModel)]="formData.companyName" #companyName="ngModel" required #companyInput>
+            <span *ngIf="!formData.companyName" style="font-size: 10px; color: red;"> Please enter a Company Name!</span>
+          </p>
+          <p class="personInfo">Company Address:
+            <input type="text" id="companyAddress" name="companyAddress" [(ngModel)]="formData.companyAddress" #companyAddress="ngModel" required #companyAddressInput>
+            <span *ngIf="!formData.companyAddress" style="font-size: 10px; color: red;"> Please enter a Company Address!</span>
+          </p>
+          <p class="personInfo">Company Contacts:
+            <input type="text" id="companyContacts" name="companyContacts" [(ngModel)]="formData.companyContacts" #companyContacts="ngModel" required  #companyContactsInput>
+            <span *ngIf="!formData.companyContacts" style="font-size: 10px; color: red;"> Please enter a Company Contacts!</span>
+          </p>
+        </div>
+      </form>
+      </div>
+      <br>
+      <div class="letterSize">
+        <p *ngIf="isFilled">Dear {{personalInfo.employerName}},</p>
+        <p *ngIf="!isFilled">Dear [Employer's Name]</p>
+        <p *ngIf="!isFilled">
+          I am writing to express my strong interest in the Junior .NET Developer position at [Company Name]. I am confident that my skills, experience, and passion make me an ideal candidate for this role.
+        </p>
+        <p *ngIf="isFilled">
+          I am writing to express my strong interest in the Junior .NET Developer position at {{personalInfo.companyName}}. I am confident that my skills, experience, and passion make me an ideal candidate for this role.
+        </p>
+        <p *ngIf="!isFilled">
+          I have a solid foundation in C# and .NET framework, and I have successfully contributed to projects that required problem-solving, creativity, and a keen eye for detail. I am eager to further develop my expertise in .NET development and believe that the Junior .NET Developer role at [Company Name] is the perfect opportunity to do so.
+        </p>
+        <p *ngIf="isFilled">
+          I have a solid foundation in C# and .NET framework, and I have successfully contributed to projects that required problem-solving, creativity, and a keen eye for detail. I am eager to further develop my expertise in .NET development and believe that the Junior .NET Developer role at {{personalInfo.companyName}} is the perfect opportunity to do so.
+        </p>
+        <p *ngIf="!isFilled">
+          Through my research on [Company Name], I have been impressed by the company's commitment to innovation and its dedication to delivering high-quality software solutions. I am excited by the chance to work in an environment that values growth, learning, and collaboration, and I am confident that my technical skills and eagerness to learn will make a meaningful contribution to [Company Name]'s success.
+        </p>
+        <p *ngIf="isFilled">
+          Through my research on {{personalInfo.companyName}}, I have been impressed by the company's commitment to innovation and its dedication to delivering high-quality software solutions. I am excited by the chance to work in an environment that values growth, learning, and collaboration, and I am confident that my technical skills and eagerness to learn will make a meaningful contribution to [Company Name]'s success.
+        </p>
+        <p>
+          What truly motivates me about the Junior .NET Developer position is the opportunity to work on challenging projects and to be part of a team that is passionate about creating cutting-edge software solutions. I am a quick learner who is enthusiastic about staying updated on the latest industry trends and emerging technologies. I am confident that my problem-solving abilities and adaptability will help me thrive in a fast-paced and dynamic development environment.
+        </p>
+        <p *ngIf="!isFilled">
+          I have had the privilege of working on projects such as in [Company Name], where I successfully developed .NET applications that met and exceeded client expectations. I am excited about the prospect of applying my skills and knowledge to make an impact at [Company Name] and contribute to the development of innovative solutions that align with your mission.
+        </p>
+        <p *ngIf="isFilled">
+          I have had the privilege of working on projects such as in {{personalInfo.companyName}}, where I successfully developed .NET applications that met and exceeded client expectations. I am excited about the prospect of applying my skills and knowledge to make an impact at {{personalInfo.companyName}} and contribute to the development of innovative solutions that align with your mission.
+        </p>
+        <p *ngIf="!isFilled">
+          Thank you for considering my application. I am eager to discuss how my qualifications align with the needs of [Company Name] as a Junior .NET Developer. I look forward to the opportunity to demonstrate my passion for software development and my dedication to achieving results.
+        </p>
+        <p *ngIf="isFilled">
+          Thank you for considering my application. I am eager to discuss how my qualifications align with the needs of {{personalInfo.companyName}} as a Junior .NET Developer. I look forward to the opportunity to demonstrate my passion for software development and my dedication to achieving results.
+        </p>
+        <p>Sincerely,</p>
+        <p *ngIf="isFilled">{{personalInfo.name}}</p>
+        <p *ngIf="!isFilled">[Your Name]</p>
+      </div>
+    </div>
+    <div class="button-container">
+      <button class="btn btn-primary" type="button" [disabled]="validForm.invalid"
+      (click)="onGeneratePDF(nameInput, addressInput, emailInput, phoneInput, employerInput,companyInput, companyAddressInput, companyContactsInput )">Generate</button>
+    </div>
+  </div>
